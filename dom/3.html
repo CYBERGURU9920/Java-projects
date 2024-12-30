@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+    </body>
+    <script>
+        // Function to add new languages to the list
+        //lekin iss tarike me problem hai ki ye pura traverse karega har baar phir textxontent ko jodega
+        function load(lang){
+            const li=document.createElement("li");
+            li.textContent=lang;
+            document.querySelector('.language').appendChild(li);
+        }
+        load('Python');
+        load('Java');
+        //iss tarike me traverse nhi karega , sidhe node bana kar append karta jaayega
+
+        function optimalLang(lang){
+            const li = document.createElement("li");
+            li.appendChild(document.createTextNode(lang));
+            document.querySelector('.language').appendChild(li);
+        }
+        optimalLang('Ruby');
+        optimalLang('C++');
+    </script>
+</html>
